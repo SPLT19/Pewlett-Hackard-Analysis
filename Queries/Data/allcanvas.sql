@@ -185,28 +185,6 @@ FROM departments as d
 INNER JOIN dept_manager as dm
 ON d.dept_no = dm.dept_no;
 
---Left Join to Capture retirement-info Table
--- Joining retirement_info and dept_emp tables
-SELECT retirement_info.emp_no,
-    retirement_info.first_name,
-retirement_info.last_name,
-    dept_emp.to_date
-FROM retirement_info
-LEFT JOIN dept_emp
-ON retirement_info.emp_no = dept_emp.emp_no;
-
---Give nicknames to tables, improve code readability by shortening
---aliases only exist within this query
---shortening names/aliases version
-
-SELECT d.dept_name,
-     dm.emp_no,
-     dm.from_date,
-     dm.to_date
-FROM departments as d
-INNER JOIN dept_manager as dm
-ON d.dept_no = dm.dept_no;
-
 -- Joining departments and dept_manager tables, 
 --shortened ver
 SELECT d.dept_name,
@@ -339,15 +317,13 @@ SELECT ce.emp_no,
 ce.first_name,
 ce.last_name,
 d.dept_name
-INTO sales_info
+--INTO sales_info
 FROM current_emp as ce
 	INNER JOIN dept_emp AS de
 		ON (ce.emp_no = de.emp_no)
 	INNER JOIN departments AS d
 		ON (de.dept_no = d.dept_no)
 WHERE d.dept_name = 'Sales';
---SELECT * FROM sales_info
-
 
 --Tailored list: employees in Sales and Development
 SELECT ce.emp_no,
@@ -362,4 +338,5 @@ FROM current_emp as ce
 		ON (de.dept_no = d.dept_no)
 WHERE d.dept_name IN ('Sales', 'Development')
 ORDER BY ce.emp_no;
---Results: SELECT * FROM sales_dev
+ --SELECT * FROM sales_dev
+ 
