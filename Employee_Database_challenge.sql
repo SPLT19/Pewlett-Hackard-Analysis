@@ -29,7 +29,19 @@ ORDER BY rtl.emp_no, rtl.to_date DESC;
 
 --Restults: SELECT * FROM retirement_last_titles
 
---DISTINCT ON statement to retrieve first occurrence of employee
+--employee number, first and last name, and title columns from the Retirement Titles table.
+SELECT COUNT(rlt.emp_no), rlt.title
+INTO ret_title_num
+FROM retirement_last_titles AS rlt
+GROUP BY rlt.title
+ORDER BY count DESC;
+
+--Results: SELECT * FROM ret_title_num
+--Most title retiring are Senior Engineer 29414, Senior Staff 14222, Engineer 14222
+
+
+
+
 
 
 
