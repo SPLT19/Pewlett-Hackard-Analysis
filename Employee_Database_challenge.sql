@@ -35,10 +35,9 @@ INTO retiring_titles
 FROM unique_titles AS untl
 GROUP BY untl.title
 ORDER BY count DESC;
-
+--confirm that it looks like this image:
 --Results: SELECT * FROM retiring_titles
 --Most title retiring are Senior Engineer 29414, Senior Staff 14222, Engineer 14222
-
 
  --Deliverable 2: The Employees Eligible for the Mentorship Program
  --identify employees who are eligible to participate in a mentorship program.
