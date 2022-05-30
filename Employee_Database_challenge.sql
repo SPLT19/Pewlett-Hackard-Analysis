@@ -23,28 +23,21 @@ SELECT DISTINCT ON (rtl.emp_no)
 	rtl.first_name,
 	rtl.last_name,
 	rtl.title
-INTO retirement_last_titles
+INTO unique_titles
 FROM retirement_titles AS rtl
 ORDER BY rtl.emp_no, rtl.to_date DESC;
 
---Restults: SELECT * FROM retirement_last_titles
+--Restults: SELECT * FROM unique_titles
 
 --employee number, first and last name, and title columns from the Retirement Titles table.
-SELECT COUNT(rlt.emp_no), rlt.title
-INTO ret_title_num
-FROM retirement_last_titles AS rlt
-GROUP BY rlt.title
+SELECT COUNT(untl.emp_no), untl.title
+INTO retiring_titles
+FROM unique_titles AS untl
+GROUP BY untl.title
 ORDER BY count DESC;
 
---Results: SELECT * FROM ret_title_num
+--Results: SELECT * FROM retiring_titles
 --Most title retiring are Senior Engineer 29414, Senior Staff 14222, Engineer 14222
-
-
-
-
-
-
-
 
 
  --Deliverable 2: The Employees Eligible for the Mentorship Program
