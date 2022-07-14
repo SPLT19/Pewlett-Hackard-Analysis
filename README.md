@@ -10,7 +10,8 @@ Lastly retrieving information regarding the people retiring to find possible can
 Analysis was performed using PostgreSQL Version
 6.7, Desktop Mode, NW.js Version 0.55.0, pgAdmin and CVS files to create a database and identify data relationships between datasets. 
 
-For the interelation between datasets the following Entity Relationship Diagram was created and used as guide to set the relationships within datasets. [EmployeeDB](EmployeeDB.png)
+For the interelation between datasets the following Entity Relationship Diagram was created and used as guide to set the relationships within datasets. 
+![EmployeeDB](EmployeeDB.png)
 
 To determine the number of retiring employees per title, an analysis was performed as well as to identify employees who are eligible to participate as mentors in a mentorship program. For this query were written and executed and the corresponding tables created and exported as csv files to the file "Data". 
 
@@ -22,12 +23,14 @@ To retrieve total number of employees about to retire according to their last ac
 [UniqueTitles](Queries/Data/unique_titles.csv)
 [RetiringTitles](Queries/Data/retiring_titles.csv)
 The data entailing the final number is the following. 
+
 ![RetiringTitles](Resources/retiring_titles.png)
 
 
 -Employees Eligible for Mentorship Program:
 To hold information about employees who are eligible to participate in a mentorship program according to birthdate characteristics  Particularly a query was made to obtain the data of retirees born between January 1, 1965 and December 31, 1965
 The result of this was exported into the csv file [MentorshipEligibility](Queries/Data/mentorship_eligibility.csv), that has the following table (image showing only first 10 entries, in total 1549 entries were obtained)
+
 ![MentorshipEligibility](Resources/MentorshipEligibility.png)
 
 -Departments where retirees are from and number of promotion per employee about to retire: 
@@ -49,6 +52,7 @@ The highest counts were seen in Senior titles, like Senior Engineer, Senior Staf
 As for the mentorship program, queries executed to create Retirement Titles table for employees who are born between January 1, 1952 and December 31, 1955.
 A total of 1548 entries were retrieved from employees that according to age and experience are suitable to be chosen as mentors as seen in the following table. (Only shows first 10 entries, refer to the csv file for the whole data) 
 The result of the query is shown below. 
+
 ![RetirementTitles](Resources/retiring_titles.png)
 
 
